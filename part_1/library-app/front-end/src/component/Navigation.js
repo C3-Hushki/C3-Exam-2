@@ -6,6 +6,7 @@ export const Navigation = ()=>{
     
     <Link to='/library/create_book' />
     <Link to='/library' />
+    <Link to='/library/:book_id'/>
     
     
     </>)

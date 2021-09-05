@@ -3,6 +3,7 @@
 import React from "react"
 import axios from 'axios'
 import { useState } from "react"
+import { deleteBook } from "../../../back-end/router/controller/books"
 
 export const getAllBooks = ()=>{
 
@@ -15,10 +16,26 @@ export const getAllBooks = ()=>{
         })
     }
 
+    const deleteBook = (id)=>{
+        
+        axios.delete('http://localhost:5000/books/:book_id').then((result)=>{
+            setBooks(result.data)
+            getAll()
+        })
+    }
+
 
     return (<>
     <h2>Get all Books</h2>
-    {}
+    {somethingIForgot.map((elm)=>{
+        return (<>
+        <h3>{elm.title}</h3>
+        <h3>{elm.author}</h3>
+        <button onClick={deleteBook(elm._id)}>Delete</button>
+        
+        
+        </>)
+    })}
     <button onClick={getAll}>get all books</button>
     
     
