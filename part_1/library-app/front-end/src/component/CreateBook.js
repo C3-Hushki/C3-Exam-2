@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-const CreateBook = ()=>{
+export const CreateBook = ()=>{
     const [title , setTitle] = useState()
     const [author , setAuthor] = useState()
     const [pages , setPages] = useState()

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 
-const Navigation = ()=>{
+export const Navigation = ()=>{
     return (<>
     
     <Link to='/library/create_book' />
