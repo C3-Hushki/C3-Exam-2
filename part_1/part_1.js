@@ -44,7 +44,7 @@ mongoose.connect('mongodb://localhost:27017/Omar_Hushki', options ,(res)=>{
 } )
 
 
-
+//========================================================================================================================
 
 //Q2) Create an API `/books` to insert a new book to the database, it should have (title , author, pages, publisher, published_at)
 
@@ -79,3 +79,20 @@ const createBook = (req,res)=>{
         res.status(200).json({success:false , message:'server error'})
     })
 }
+
+//routes
+
+const express = require('express')
+
+const bookRouter = express.Router()
+
+bookRouter.post('/' ,createBook )
+
+//Server 
+
+app.use('/book',bookRouter)
+
+
+//========================================================================================================================
+
+//Q3) Create an API `/books` to get all the books from the database.
