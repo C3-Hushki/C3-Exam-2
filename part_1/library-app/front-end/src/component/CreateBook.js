@@ -3,18 +3,18 @@ import { useState } from "react"
 
 const CreateBook = ()=>{
     const [title , setTitle] = useState()
-    const [author , setTitle] = useState()
-    const [pages , setTitle] = useState()
-    const [publisher , setTitle] = useState()
-    const [publishedAt , setTitle] = useState()
+    const [author , setAuthor] = useState()
+    const [pages , setPages] = useState()
+    const [publisher , setPublisher] = useState()
+    const [publishedAt , setPublishedAt] = useState()
 
 
     return (<>
-    <input></input>
-    <input></input>
-    <input></input>
-    <input></input>
-    <input></input>
+    <input type='text' placeholder='title'></input>
+    <input type='text' placeholder='author'></input>
+    <input type='numer' placeholder='pages'></input>
+    <input type='text' placeholder='publisher'></input>
+    <input type='date' placeholder='publishedAt'></input>
     <button>Submit</button>
     
     
