@@ -34,8 +34,28 @@ const getAllBooks = (req,res)=>{
 const findBookById = (req,res)=>{
     bookModel.findOne({_id:req.params.book_id}).then((result)=>{
         res.status(200).json({success : true , result : result})
-    }).catch
+    }).catch((err)=>{
+        res.status(200).json({success : true , message : 'server error'})
+    })
+}
+
+//Q5) Create an API `/books/:book_id` to delete a specific book from the database
+
+const deleteBook = (req,res)=>{
+    const id = req.params.book_id
+    bookModel.findOneAndDelete({_id:id} , (err,data)=>{
+        if(err){
+            console.log(err)
+        }
+        if(data){
+            console.log(data)
+        }
+    }).then((result)=>{
+        res.status(200).json({success:true , message:`artice with id ${id} deleted`})
+    }).catch((err)=>{
+        res.status(404).json("server error")
+    })
 }
 
 
-module.exports = {createBook ,getAllBooks}
+module.exports = {createBook ,getAllBooks,findBookById,deleteBook}
